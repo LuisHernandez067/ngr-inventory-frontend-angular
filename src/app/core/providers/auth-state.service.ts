@@ -1,12 +1,7 @@
 import { Injectable, Signal, computed, signal } from '@angular/core';
+import type { AuthUser } from '../../entities/auth/auth.types';
 
-export interface AuthUser {
-  id: string;
-  email: string;
-  name: string;
-  roles: string[];
-  permissions: string[];
-}
+export type { AuthUser };
 
 @Injectable({ providedIn: 'root' })
 export class AuthStateService {
