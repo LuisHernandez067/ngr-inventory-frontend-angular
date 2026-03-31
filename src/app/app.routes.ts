@@ -270,6 +270,46 @@ export const routes: Routes = [
               },
             ],
           },
+          {
+            path: 'audit',
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import('./pages/admin/audit/audit-log.page').then(m => m.AuditLogPage),
+              },
+              {
+                path: ':id',
+                loadComponent: () =>
+                  import('./pages/admin/audit/audit-detail.page').then(m => m.AuditDetailPage),
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: 'reports',
+        children: [
+          {
+            path: 'stock',
+            loadComponent: () =>
+              import('./pages/reports/report-stock.page').then(m => m.ReportStockPage),
+          },
+          {
+            path: 'movements',
+            loadComponent: () =>
+              import('./pages/reports/report-movements.page').then(m => m.ReportMovementsPage),
+          },
+          {
+            path: 'kardex',
+            loadComponent: () =>
+              import('./pages/reports/report-kardex.page').then(m => m.ReportKardexPage),
+          },
+          {
+            path: 'low-stock',
+            loadComponent: () =>
+              import('./pages/reports/report-low-stock.page').then(m => m.ReportLowStockPage),
+          },
         ],
       },
       {
