@@ -160,6 +160,26 @@ export const routes: Routes = [
               },
             ],
           },
+          {
+            path: 'stock',
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import('./pages/inventory/stock/stock-current.page').then(m => m.StockCurrentPage),
+              },
+              {
+                path: 'by-location',
+                loadComponent: () =>
+                  import('./pages/inventory/stock/stock-by-location.page').then(m => m.StockByLocationPage),
+              },
+            ],
+          },
+          {
+            path: 'kardex',
+            loadComponent: () =>
+              import('./pages/inventory/kardex/kardex.page').then(m => m.KardexPage),
+          },
         ],
       },
       {
