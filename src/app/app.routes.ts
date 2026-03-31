@@ -208,6 +208,71 @@ export const routes: Routes = [
         ],
       },
       {
+        path: 'admin',
+        children: [
+          {
+            path: 'users',
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import('./pages/admin/users/users.page').then(m => m.UsersPage),
+              },
+              {
+                path: 'new',
+                loadComponent: () =>
+                  import('./pages/admin/users/user-create.page').then(m => m.UserCreatePage),
+              },
+              {
+                path: ':id/edit',
+                loadComponent: () =>
+                  import('./pages/admin/users/user-edit.page').then(m => m.UserEditPage),
+              },
+              {
+                path: ':id/roles',
+                loadComponent: () =>
+                  import('./pages/admin/users/user-roles.page').then(m => m.UserRolesPage),
+              },
+            ],
+          },
+          {
+            path: 'roles',
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import('./pages/admin/roles/roles.page').then(m => m.RolesPage),
+              },
+              {
+                path: 'new',
+                loadComponent: () =>
+                  import('./pages/admin/roles/role-create.page').then(m => m.RoleCreatePage),
+              },
+              {
+                path: ':id/edit',
+                loadComponent: () =>
+                  import('./pages/admin/roles/role-edit.page').then(m => m.RoleEditPage),
+              },
+              {
+                path: ':id/permissions',
+                loadComponent: () =>
+                  import('./pages/admin/roles/role-permissions.page').then(m => m.RolePermissionsPage),
+              },
+            ],
+          },
+          {
+            path: 'permissions',
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import('./pages/admin/permissions/permissions.page').then(m => m.PermissionsPage),
+              },
+            ],
+          },
+        ],
+      },
+      {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full',
