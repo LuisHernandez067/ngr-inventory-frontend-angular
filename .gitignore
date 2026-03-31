@@ -45,3 +45,7 @@ Thumbs.db
 
 # documentos técnicos
 docs/
+
+# test
+test-results/
+playwright-report/
