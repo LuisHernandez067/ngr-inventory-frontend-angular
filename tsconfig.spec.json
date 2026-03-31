@@ -4,7 +4,8 @@
     "outDir": "./out-tsc/spec",
     "types": ["jest", "node"],
     "esModuleInterop": true,
-    "module": "CommonJS"
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   },
   "include": ["src/**/*.spec.ts", "src/**/*.d.ts", "setup-jest.ts"]
 }

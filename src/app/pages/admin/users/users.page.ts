@@ -222,7 +222,7 @@ export class UsersPage implements OnInit {
         confirmLabel: 'Eliminar',
         danger: true,
       },
-    }).afterClosed().subscribe(confirmed => {
+    }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
         this.userService.delete(user.id).subscribe({
           next: () => this.loadUsers(),

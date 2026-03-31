@@ -179,7 +179,7 @@ export class RolesPage implements OnInit {
         confirmLabel: 'Eliminar',
         danger: true,
       },
-    }).afterClosed().subscribe(confirmed => {
+    }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
         this.roleService.delete(role.id).subscribe({
           next: () => this.loadRoles(),
