@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
+import { DatePipe } from '@angular/common';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { MovementService } from '../../../shared/api/http/movement.service';
 import type { Movement, MovementType, MovementStatus } from '../../../entities/movement/movement.types';
@@ -21,7 +22,7 @@ import type { AppError } from '../../../shared/types';
   standalone: true,
   imports: [
     RouterLink,
-    ReactiveFormsModule,
+    ReactiveFormsModule, DatePipe,
     MatTableModule, MatPaginatorModule, MatButtonModule,
     MatIconModule, MatInputModule, MatFormFieldModule,
     MatSelectModule, MatProgressSpinnerModule, MatChipsModule,

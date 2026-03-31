@@ -1,5 +1,4 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -23,7 +22,7 @@ import type { PaginationMeta, AppError } from '../../../shared/types';
   selector: 'app-stock-current-page',
   standalone: true,
   imports: [
-    RouterLink, ReactiveFormsModule,
+    ReactiveFormsModule,
     MatTableModule, MatPaginatorModule, MatButtonModule,
     MatIconModule, MatInputModule, MatFormFieldModule,
     MatSelectModule, MatProgressSpinnerModule, MatTooltipModule,

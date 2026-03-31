@@ -10,7 +10,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialog } from '@angular/material/dialog';
-import { DatePipe } from '@angular/common';
 import { MovementService } from '../../../shared/api/http/movement.service';
 import { ProductService } from '../../../shared/api/http/product.service';
 import { WarehouseService } from '../../../shared/api/http/warehouse.service';
@@ -37,7 +36,7 @@ const MOVEMENT_TYPES: Array<{ value: MovementType; label: string; needsSource: b
   selector: 'app-movement-register-page',
   standalone: true,
   imports: [
-    RouterLink, ReactiveFormsModule, DatePipe,
+    RouterLink, ReactiveFormsModule,
     MatButtonModule, MatCardModule, MatFormFieldModule,
     MatInputModule, MatSelectModule, MatProgressSpinnerModule,
     MatIconModule, MatDividerModule,

@@ -12,7 +12,7 @@ import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { StockService } from '../../shared/api/http/stock.service';
 import { ExportService } from '../../shared/services/export.service';
 import { FileUtils } from '../../shared/utils/file.utils';
-import type { StockEntry } from '../../entities/stock/stock.types';
+import type { StockEntry, StockStatus } from '../../entities/stock/stock.types';
 import type { PaginationMeta } from '../../shared/types';
 
 @Component({
@@ -209,7 +209,7 @@ export class ReportLowStockPage implements OnInit {
     this.stockService.getCurrent({
       page,
       pageSize,
-      ...(statusValue ? { status: statusValue } : {}),
+      ...(statusValue ? { status: statusValue as StockStatus } : {}),
     }).subscribe({
       next: ({ data, meta }) => {
         this.data.set(data);
