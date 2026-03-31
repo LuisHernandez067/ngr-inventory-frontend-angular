@@ -1,0 +1,1 @@
+# ngr-inventory-frontend-angular
