@@ -180,6 +180,31 @@ export const routes: Routes = [
             loadComponent: () =>
               import('./pages/inventory/kardex/kardex.page').then(m => m.KardexPage),
           },
+          {
+            path: 'counts',
+            children: [
+              {
+                path: '',
+                loadComponent: () =>
+                  import('./pages/inventory/counts/counts.page').then(m => m.CountsPage),
+              },
+              {
+                path: 'new',
+                loadComponent: () =>
+                  import('./pages/inventory/counts/count-create.page').then(m => m.CountCreatePage),
+              },
+              {
+                path: ':id',
+                loadComponent: () =>
+                  import('./pages/inventory/counts/count-detail.page').then(m => m.CountDetailPage),
+              },
+              {
+                path: ':id/confirm',
+                loadComponent: () =>
+                  import('./pages/inventory/counts/count-confirm.page').then(m => m.CountConfirmPage),
+              },
+            ],
+          },
         ],
       },
       {
